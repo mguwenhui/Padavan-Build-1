@@ -29,7 +29,7 @@ jobs:
       matrix:
         include:
           - build_variant: "mt7621"
-            targets: "JCG-AC860M"
+            targets: "NETGEAR-BZV"
 
     steps:
       - name: Checkout main            # 导入主分支
