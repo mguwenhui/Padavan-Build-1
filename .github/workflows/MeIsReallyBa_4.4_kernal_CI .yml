@@ -5,9 +5,9 @@ name: Build from MeIsReallyBa's kernal4.4 repo
 
 on: 
   workflow_dispatch:
-    inputs:
-#  schedule:                                                    # 自动编译
-#    - cron: 0 19 * * *                                         # 每天国际时间19点，北京时间凌晨3点执行
+   inputs:
+   #schedule:                                                    # 自动编译
+   #  - cron: 0 19 * * *                                         # 每天国际时间19点，北京时间凌晨3点执行
   watch:                                                        # 监视操作
     types: [started]                                            # 点击 Star 之后
 env:
