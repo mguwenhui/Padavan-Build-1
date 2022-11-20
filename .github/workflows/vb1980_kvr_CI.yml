@@ -79,7 +79,7 @@ jobs:
           echo "CONFIG_FIRMWARE_INCLUDE_KOOLPROXY=n" >> $m.config #KP广告过滤
           ##DNS服务##
           echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNS=y" >> $m.config #smartdns
-          echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNSBIN=n" >> $m.config #smartdns二进制文件
+          echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNSBIN=y" >> $m.config #smartdns二进制文件
           echo "CONFIG_FIRMWARE_INCLUDE_ADGUARDHOME=n" >> $m.config #adg DNS去AD
           echo "CONFIG_FIRMWARE_INCLUDE_DNSFORWARDER=n" >> $m.config #DNSFORWARDER
           echo "CONFIG_FIRMWARE_INCLUDE_CLOUDFLAREDDNS=n" >> $m.config #CLOUDFLAREDDNS
@@ -95,7 +95,7 @@ jobs:
           echo "CONFIG_FIRMWARE_INCLUDE_ALIDDNS=n" >> $m.config #aliddns
           echo "CONFIG_FIRMWARE_INCLUDE_DDNSTO=n" >> $m.config #ddnsto  ~0.5M
           echo "CONFIG_FIRMWARE_INCLUDE_ALDRIVER=n" >> $m.config  #ALDRIVER  ~3m
-          echo "CONFIG_FIRMWARE_INCLUDE_SQM=n" >> $m.config #SQM
+          echo "CONFIG_FIRMWARE_INCLUDE_SQM=y" >> $m.config #SQM
           echo "CONFIG_FIRMWARE_INCLUDE_WIREGUARD=n" >>.config #wireguard 10k
           for MOD in UFSD FAT EXFAT EXT2 EXT3 EXT4 XFS FUSE SWAP; do
               sed -i "s/CONFIG_FIRMWARE_ENABLE_${MOD}=y/CONFIG_FIRMWARE_ENABLE_${MOD}=n/" $m.config; done; \
