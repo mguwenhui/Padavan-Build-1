@@ -15,7 +15,7 @@ env:
   images_dir: /opt/images                                       # 固件目录
   work_dir: /opt/padavan/trunk                                  # 工作目录
   config_dir: /opt/padavan/trunk/configs/templates              # 设备模板目录
-  src_git: https://github.com/MeIsReallyBa/padavan-4.4.git      # 源码地址
+  src_git: https://github.com/mguwenhui/padavan-4.4.git      # 源码地址
 
 jobs:
   build:
@@ -29,9 +29,9 @@ jobs:
       matrix:
         include:
           - build_variant: "mt7621"
-            targets: "K2P"
-          - build_variant: "mt7621"
-            targets: "R2100"
+            targets: "NETGEAR-BZV"
+         # - build_variant: "mt7621"
+          #  targets: "R2100"
     steps:
       - name: Checkout main            # 导入主分支
         uses: actions/checkout@v2
@@ -68,14 +68,14 @@ jobs:
           ##广告管理##
           echo "CONFIG_FIRMWARE_INCLUDE_ADBYBY=n" >> $m.config #adbyby plus+
           ##DNS服务##
-          echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNS=n" >> $m.config #smartdns
+          echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNS=y" >> $m.config #smartdns
           echo "CONFIG_FIRMWARE_INCLUDE_ADGUARDHOME=n" >> $m.config #adg DNS去AD
           ##内网穿透服务##
-          echo "CONFIG_FIRMWARE_INCLUDE_ZEROTIER=n" >> $m.config #zerotier ~1.3M
+          echo "CONFIG_FIRMWARE_INCLUDE_ZEROTIER=y" >> $m.config #zerotier ~1.3M
           echo "CONFIG_FIRMWARE_INCLUDE_ALIDDNS=n" >> $m.config #aliddns
           echo "CONFIG_FIRMWARE_INCLUDE_DDNSTO=n" >> $m.config #ddnsto  ~0.5M
           echo "CONFIG_FIRMWARE_INCLUDE_ALDRIVER=n" >> $m.config  #ALDRIVER  ~3m
-          echo "CONFIG_FIRMWARE_INCLUDE_SQM=n" >> $m.config #SQM
+          echo "CONFIG_FIRMWARE_INCLUDE_SQM=y" >> $m.config #SQM
           ##CPU超频##
           echo "CONFIG_FIRMWARE_INCLUDE_OC=n" >> $m.config #CPU超频开关
           echo 'CONFIG_FIRMWARE_MT7621_OC="0x312"' >> $m.config #此处填写对应频率的十六进制：1000Mhz=0x312 1100Mhz=0x362 1120Mhz=0x372 1200Mhz=0x3B2
